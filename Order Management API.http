@@ -1,0 +1,121 @@
+@orderURL = http://localhost:5064
+
+#### customer controler ####
+############################
+
+### Get All Customers
+###
+GET {{orderURL}}/api/customer
+Accept: application/json
+
+### Get Customer by Id and Their Orders
+###
+GET {{orderURL}}/api/customer/1
+Accept: application/json
+
+### Add Customer
+###
+POST {{orderURL}}/api/customer
+Content-Type: application/json
+{
+  "fullName": "Donald",
+  "email": "DonalDT@gmail.com",
+  "phone": "555 555 5**"
+}
+
+### Update Customer
+###
+PUT {{orderURL}}/api/customer/5
+Content-Type: application/json
+{
+  "fullName": "Gegexaa Lomadze",
+  "email": "LomaaG@gmail.com"
+}
+
+
+### Delete Customer By Id
+###
+DELETE {{orderURL}}/api/customer/4
+
+
+
+
+
+
+
+
+####  order controller  ####
+############################
+
+### Get All Orders
+###
+GET {{orderURL}}/api/order
+Accept: application/json
+
+### Get Order By Id Its Customer and OrderDetails
+###
+GET {{orderURL}}/api/order/2
+Accept: application/json
+
+
+### Add Order
+###
+POST {{orderURL}}/api/order
+Content-Type: application/json
+{
+  "orderDate": "2024-01-10",
+  "customerId": 5
+}
+
+### Update Order
+###
+PUT {{orderURL}}/api/order/4
+Content-Type: application/json
+{
+  "orderDate": "2024-02-29",
+  "customerId": 6
+}
+
+### Delete Order
+###
+DELETE {{orderURL}}/api/order/4
+
+
+
+
+#### OrderDelatil controller ####
+#################################
+
+### Get all OrderDetails
+###
+GET {{orderURL}}/api/orderdetail
+Accept: application/json
+
+
+### Get orderDetails and the order
+###
+GET {{orderURL}}/api/orderdetail/2
+Accept: application/json
+
+### Add orderDetails
+###
+POST {{orderURL}}/api/orderdetail
+Content-Type: application/json
+{
+  "orderId": 6,
+  "totalPrice": 25.50,
+  "shippingAddress": "Tbilisi"
+}
+
+### Update orderDetails
+###
+PUT {{orderURL}}/api/orderdetail/6
+Content-Type: application/json
+{
+    "orderId": 3,
+    "totalPrice": 19.90,
+    "shippingAddress": "Yazbegi"
+}
+
+### Delet orderDetails
+DELETE {{orderURL}}/api/orderdetail/3
